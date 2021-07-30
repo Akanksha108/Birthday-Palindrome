@@ -1,0 +1,91 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    text-align: center;
+}
+
+.palindrome{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 450px;
+    margin: 20px;
+}
+
+.palindrome_heading{
+    width: 50%;
+    margin-top: 50px;
+    padding-top: 100px;
+}
+
+.palindrome_def{
+    margin-top: 10px;
+    padding-top: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#palindrome_img{
+    width: 50%;
+    /* width: 100%; */
+    height: 600px;
+    margin: 20px;
+    padding: 10px;
+}
+
+#palindrome_bday_check{
+    margin: 20px;
+}
+
+@media screen and (max-width:360px){
+    .palindrome{
+        flex-wrap: wrap;
+        height: 650px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .palindrome_heading{
+        width: 100%;
+        margin-top: 15px;
+        padding-top: 20px;
+    }
+
+    .palindrome_def{
+        margin-top: 20px;
+        padding: 20px 20px 0 20px;
+    }
+
+    #palindrome_img{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        height: 400px;
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    .palindrome{
+        justify-content: space-between;
+    }
+
+    .palindrome_heading{
+        width: 40%;
+        padding-top: 30px;
+        margin-top: 20px;
+    }
+
+    #palindrome_img{
+        height: 400px;
+    }
+}
+
+@media screen and (min-width: 1020px) {
+    .palindrome_heading{
+        padding-top: 80px;
+        margin-top: 30px;
+    }
+}
