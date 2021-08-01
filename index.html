@@ -8,22 +8,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="palindrome">
+    <section class="palindrome">
         <div class="palindrome_heading">
             <h1>Check out if your Birthday is Palindrome</h1>
             <p class="palindrome_def">A palindrome is a word, sentence, verse, or even number that reads the same backward or forward. It derives from Greek roots that literally mean “running back”</p>
         </div>
 
         <img src="./images/gift.jpg" alt="gift" id="palindrome_img" />
-    </div>
+    </section>
 
-    <div id="palindrome_bday_check">
+    <section class="form_heading">
+        <h2>Enter your birthdate and we will tell you if your birthdate is a palindrome</h2>
+        <p>
+            This app checks your birthdate in 4 formats: <i>yyyy-mm-dd, dd-mm-yyyy, mm-dd-yy, m-dd-yyy</i>
+        </p>
+        <p>
+            e.g.If your birthdate is 01 Aug,1995, then app will check for 19950801, 01081995, 080195,1081995
+        </p>
+    </section>
+
+    <section id="palindrome_bday_check">
         <form id="bday_check_form">
-            <input type="date" id="birthdate" min="01-01-1960" max="01-01-2080" required />
+            <input type="date" id="birthdate" min="01-01-1960" max="01-01-2080" required /><br>
 
             <button type="submit" id="submit_btn">Check</button>
         </form>
-    </div>
+    </section>
+
+    <p id="output"></p>
 
     
     <script src="script.js"></script>
