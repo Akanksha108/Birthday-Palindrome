@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400;600;700&display=swap');
+
 *{
     box-sizing: border-box;
 }
@@ -5,6 +11,8 @@
 body{
     text-align: center;
     overflow-x: hidden;
+    background: linear-gradient(to right, #A5FECB, #20BDFF, #5433FF); 
+    font-family: "Signika Negative", sans-serif;
 }
 
 .palindrome{
@@ -21,11 +29,15 @@ body{
     padding-top: 100px;
 }
 
+.palindrome_heading h1{
+    font-size: 28px;
+}
+
 .palindrome_def{
     margin-top: 10px;
-    padding-top: 15px;
-    font-weight: bold;
+    padding-top: 20px 25px 0;
     text-align: center;
+    font-size: 18px;
 }
 
 #palindrome_img{
@@ -50,10 +62,16 @@ body{
     margin: 15px;
 }
 
+.form_heading h2{
+    font-size: 25px;
+}
+
 #submit_btn{
     padding: 8px 15px;
     border-radius: 10px;
     margin: 15px;
+    background-color: #0E7490;
+    color: white;
 }
 
 @media screen and (max-width:360px){
@@ -83,6 +101,18 @@ body{
     }
 }
 
+
+@media screen and (max-width:360px) {
+    .form_heading h2{
+        font-size: 20px;
+    }
+
+    .form_heading{
+        padding-top: 30px;
+    }
+}
+
+
 @media screen and (min-width:768px) {
 
     .palindrome{
@@ -98,6 +128,25 @@ body{
     #palindrome_img{
         height: 400px;
     }
+}
+
+.footer{
+    width: 100%;
+    background-color: #D1D5DB;
+}
+
+.footer_list{
+    list-style-type: none;
+}
+
+.footer_list li{
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 10px 0 10px;
+}
+
+.footer_img{
+    width: 25px;
 }
 
 @media screen and (min-width: 1020px) {
