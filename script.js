@@ -6,6 +6,8 @@ let dateConvToNumber = 0;
 
 let reverseNumber = 0;
 
+let output = document.getElementById("output");
+
 submitBtn.addEventListener("click", function(event){
 
     event.preventDefault();
@@ -45,10 +47,10 @@ submitBtn.addEventListener("click", function(event){
     }
 
     if(dateConvToNumber == reverseNumber){
-        console.log("Hurray it is a palindrome!!!!");
+        output.innerHTML = "Hurray it is a palindrome!!!!";
     }
     else{
-        console.log("It is not a palindrome");
+        output.innerHTML ="It is not a palindrome";
     }
 
 });
