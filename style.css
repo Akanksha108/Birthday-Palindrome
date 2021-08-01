@@ -4,6 +4,7 @@
 
 body{
     text-align: center;
+    overflow-x: hidden;
 }
 
 .palindrome{
@@ -11,7 +12,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     height: 450px;
-    margin: 20px;
+    margin: 0 20px 20px 20px;
 }
 
 .palindrome_heading{
@@ -37,6 +38,22 @@ body{
 
 #palindrome_bday_check{
     margin: 20px;
+}
+
+#birthdate{
+    margin: 10px;
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.form_heading{
+    margin: 15px;
+}
+
+#submit_btn{
+    padding: 8px 15px;
+    border-radius: 10px;
+    margin: 15px;
 }
 
 @media screen and (max-width:360px){
