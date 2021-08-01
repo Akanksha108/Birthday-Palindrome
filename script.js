@@ -10,14 +10,12 @@ submitBtn.addEventListener("click", function(event){
 
     event.preventDefault();
     let bdate = birthDate.value;
-    // console.log(date);
+    console.log(`bday: ${bdate}`);
 
-    let bdateCopy = bdate;
-    console.log(bdateCopy);
 
-    for(let i = 0; i < bdateCopy.length; i++){
+    for(let i = 0; i < bdate.length; i++){
 
-         let num = parseInt(bdateCopy.charAt(i));
+         let num = parseInt(bdate.charAt(i));
          console.log("num: " + num);
 
          if(!isNaN(num)){
@@ -30,17 +28,27 @@ submitBtn.addEventListener("click", function(event){
          }
     }
 
-    for(let i = 0; i < bdateCopy.length - 2; i++){
+    let dateConvToNumberCopy = dateConvToNumber;
 
-        let digit = dateConvToNumber % 10;
+    for(let i = 0; i < bdate.length - 2; i++){
+
+        let digit = dateConvToNumberCopy % 10;
         console.log(`Digit of 2nd for loop: ${digit}`);
 
         reverseNumber = (reverseNumber * 10) + digit;
         console.log("Rev No: "+ reverseNumber);
 
-        dateConvToNumber = Math.floor(dateConvToNumber / 10);
-        console.log(`DateToNum:  ${dateConvToNumber}`);
+        dateConvToNumberCopy = Math.floor(dateConvToNumberCopy / 10);
 
+        console.log(`DateToNum:  ${dateConvToNumberCopy}`);
+
+    }
+
+    if(dateConvToNumber == reverseNumber){
+        console.log("Hurray it is a palindrome!!!!");
+    }
+    else{
+        console.log("It is not a palindrome");
     }
 
 });
