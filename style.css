@@ -54,7 +54,7 @@ body{
 
 #birthdate{
     margin: 10px;
-    padding: 8px;
+    padding: 10px 0 10px 5px;
     border-radius: 12px;
 }
 
@@ -72,9 +72,41 @@ body{
     margin: 15px;
     background-color: #0E7490;
     color: white;
+    font-weight: bold;
+    font-size: 15px;
 }
 
-@media screen and (max-width:360px){
+#output{
+    width: 50%;
+    display: block;
+    margin: auto;
+    padding: 15px;
+    font-size: 20px;
+}
+
+
+.footer{
+    width: 100%;
+    background-color: #D1D5DB;
+}
+
+.footer_list{
+    list-style-type: none;
+}
+
+.footer_list li{
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 10px 0 10px;
+}
+
+.footer_img{
+    width: 25px;
+}
+
+
+@media screen and (max-width:360px) {
+
     .palindrome{
         flex-wrap: wrap;
         height: 650px;
@@ -99,16 +131,17 @@ body{
         margin: 0;
         height: 400px;
     }
-}
 
-
-@media screen and (max-width:360px) {
     .form_heading h2{
         font-size: 20px;
     }
 
     .form_heading{
         padding-top: 30px;
+    }
+
+    #output{
+        width: 80%;
     }
 }
 
@@ -128,25 +161,6 @@ body{
     #palindrome_img{
         height: 400px;
     }
-}
-
-.footer{
-    width: 100%;
-    background-color: #D1D5DB;
-}
-
-.footer_list{
-    list-style-type: none;
-}
-
-.footer_list li{
-    display: inline-block;
-    padding: 10px;
-    margin: 10px 10px 0 10px;
-}
-
-.footer_img{
-    width: 25px;
 }
 
 @media screen and (min-width: 1020px) {
