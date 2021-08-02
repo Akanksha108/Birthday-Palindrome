@@ -11,40 +11,39 @@ let output = document.getElementById("output");
 submitBtn.addEventListener("click", function(event){
 
     event.preventDefault();
+
     let bdate = birthDate.value;
-    console.log(`bday: ${bdate}`);
+    const dateArr = bdate.split("-");
+    console.log(dateArr);
+
+    let year = dateArr[0];
+    let month = dateArr[1];
+    let day = dateArr[2];
 
 
+    // Format : 1995-08-01
     for(let i = 0; i < bdate.length; i++){
 
          let num = parseInt(bdate.charAt(i));
-         console.log("num: " + num);
 
          if(!isNaN(num)){
              let currentDigit = num % 10;
 
-             console.log(`CurrDig: ${currentDigit}`);
-
-             dateConvToNumber = (dateConvToNumber * 10) + currentDigit;
-             console.log(`Date Converted To Number:  ${dateConvToNumber}`);  
+             dateConvToNumber = (dateConvToNumber * 10) + currentDigit; 
          }
     }
 
-    let dateConvToNumberCopy = dateConvToNumber;
+    let dateConvToNumberCopy1 = dateConvToNumber;
 
     for(let i = 0; i < bdate.length - 2; i++){
 
-        let digit = dateConvToNumberCopy % 10;
-        console.log(`Digit of 2nd for loop: ${digit}`);
+        let digit = dateConvToNumberCopy1 % 10;
 
         reverseNumber = (reverseNumber * 10) + digit;
-        console.log("Rev No: "+ reverseNumber);
 
-        dateConvToNumberCopy = Math.floor(dateConvToNumberCopy / 10);
-
-        console.log(`DateToNum:  ${dateConvToNumberCopy}`);
-
+        dateConvToNumberCopy1 = Math.floor(dateConvToNumberCopy1 / 10);
     }
+
 
     if(dateConvToNumber == reverseNumber){
         output.innerHTML = "Hurray it is a palindrome!!!!";
