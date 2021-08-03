@@ -2,11 +2,12 @@ let submitBtn = document.getElementById("submit_btn");
 
 let birthDate = document.getElementById("birthdate");
 
-let dateConvToNumber = 0;
-
 let reverseNumber = 0;
 
 let output = document.getElementById("output");
+
+const datesInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
 
 // Palindrome function
 function isPalindrome(format){
@@ -68,6 +69,60 @@ function combinations(year, month, date){
 }
 
 
+// Function to check nearest palindrome
+function nextPalindrome(year, month, date){
+    let date1 = Number(date);
+    let month1 = Number(month);
+    let year1 = Number(year);
+
+    let date2 = Number(date);
+    let month2 = Number(month);
+    let year2 = Number(year);
+
+
+    // Forward Check
+    for(let i = 1; i > 0; i++){
+        date1 = date1 + 1;
+       
+        if(date1 > Number(datesInMonth[month1 - 1])){
+            date1 = 1;
+            month1 = month1 + 1;          //Next Month
+            if(month1 > 12){
+                month1 = 1;             
+                year1 = year1 + 1;      //Next Year
+            }
+        }
+       
+        let yyString = year1.toString();
+        let mmString = month1.toString();
+        let ddString = date1.toString();
+
+        if(mmString.length == 1){
+            mmString = "0" + mmString;
+        }
+
+        if(ddString.length == 1){
+            ddString = "0" + ddString;
+        }
+
+        
+        let nextFlag_1 = combinations(yyString, mmString, ddString);
+        
+        if(nextFlag_1){
+            console.log(nextFlag_1);
+            console.log(i);
+            return [`${nextFlag_1}` , i];
+        }
+        }
+
+
+        
+        
+
+}
+
+
+
 submitBtn.addEventListener("click", function(event){
 
     event.preventDefault();
@@ -89,8 +144,13 @@ submitBtn.addEventListener("click", function(event){
         output.innerHTML = `Hurray, your birthdate in format ${flag} is palindrome`;
     }
     else{
+        
+        let [flag_1, diff] = nextPalindrome(year, month, date);
+        
         output.style.border = "2px solid black";
-        output.innerHTML = `Aww!! Your birthdate is not a palindrome`;
+
+
+        output.innerHTML += `Aww!! Your birthdate is not a palindrome. The nearest palindrome is ${flag_1}. You missed it by ${diff} days`;
     }
 
 });
