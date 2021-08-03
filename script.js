@@ -106,17 +106,51 @@ function nextPalindrome(year, month, date){
         }
 
         
-        let nextFlag_1 = combinations(yyString, mmString, ddString);
+        let forwardCheck = combinations(yyString, mmString, ddString);
         
-        if(nextFlag_1){
-            console.log(nextFlag_1);
+        if(forwardCheck){
+            console.log(forwardCheck);
             console.log(i);
-            return [`${nextFlag_1}` , i];
+            return [`${forwardCheck}` , i];
         }
         }
 
 
-        
+        // Backward Check
+
+        if(year2 > 1){
+            date2 = date2 - 1;
+            if(date2 < 1){
+                month2 = month2 - 1;        //Previous Month
+                if(month2 < 1){
+                    month2 = 12;
+                    year2 = year2 - 1;      //Previous Year
+                    if(year2 < 1){
+                        return;
+                    }
+                    date2 = datesInMonth[month2 - 1];
+                }
+            }
+
+            let yyString = year2.toString();
+            let mmString = month2.toString();
+            let ddString = date2.toString();
+
+            if(mmString.length == 1){
+                mmString = "0" + mmString;
+            }
+
+            if(ddString.length == 1){
+                ddString = "0" + ddString;
+            }
+        }
+
+        let backwardCheck = combinations(yyString, mmString, ddString);
+
+        if(backwardCheck){
+            return [`${backwardCheck}`, i];
+        }
+
         
 
 }
