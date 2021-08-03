@@ -150,18 +150,13 @@ function nextPalindrome(year, month, date){
         if(backwardCheck){
             return [`${backwardCheck}`, i];
         }
-
-        
-
 }
 
 
-
-submitBtn.addEventListener("click", function(event){
-
-    event.preventDefault();
+function checkPalindrome(){
 
     let bdate = birthDate.value;
+
     const dateArr = bdate.split("-");
     console.log(dateArr);
 
@@ -185,6 +180,23 @@ submitBtn.addEventListener("click", function(event){
 
 
         output.innerHTML += `Aww!! Your birthdate is not a palindrome. The nearest palindrome is ${flag_1}. You missed it by ${diff} days`;
+    }
+
+}
+
+
+submitBtn.addEventListener("click", function(event){
+
+    event.preventDefault();
+
+    let bdate = birthDate.value;
+
+    if(bdate){
+        output.innerHTML = "<img src = \"./images/timer.gif\" width = \" 150px\" height = \"150px\">";
+        setTimeout(() => {
+            output.innerHTML = "";
+            checkPalindrome();
+        }, 4000);
     }
 
 });
