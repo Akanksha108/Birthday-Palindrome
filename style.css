@@ -19,7 +19,6 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    height: 450px;
     margin: 0 20px 20px 20px;
 }
 
@@ -41,9 +40,6 @@ body{
 }
 
 #palindrome_img{
-    width: 50%;
-    /* width: 100%; */
-    height: 600px;
     margin: 20px;
     padding: 10px;
 }
@@ -105,7 +101,7 @@ body{
 }
 
 
-@media screen and (max-width:360px) {
+@media screen and (min-width:360px) {
 
     .palindrome{
         flex-wrap: wrap;
@@ -150,6 +146,7 @@ body{
 
     .palindrome{
         justify-content: space-between;
+        height: 450px;
     }
 
     .palindrome_heading{
@@ -159,6 +156,7 @@ body{
     }
 
     #palindrome_img{
+        width: 50%;
         height: 400px;
     }
 }
