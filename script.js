@@ -109,8 +109,8 @@ function nextPalindrome(year, month, date){
         let forwardCheck = combinations(yyString, mmString, ddString);
         
         if(forwardCheck){
-            console.log(forwardCheck);
-            console.log(i);
+            // console.log(forwardCheck);
+            // console.log(i);
             return [`${forwardCheck}` , i];
         }
         }
